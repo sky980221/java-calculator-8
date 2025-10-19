@@ -37,6 +37,17 @@ class ApplicationTest extends NsTest {
         assertThat(result1).isEqualTo(0);
         assertThat(result2).isEqualTo(0);
     }
+    
+    @Test
+    void 기본_구분자_분리_기능() {
+        //given
+        String input1 = "3,2:6";
+        //then
+        Calculate.splitString(input1);
+        //when
+        assertThat(Calculate.splitString(input1)).isEqualTo(new String[]{"3","2","6"});
+    }
+       
     @Override
     public void runMain() {
         Application.main(new String[]{});
