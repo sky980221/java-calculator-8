@@ -1,5 +1,6 @@
 package calculator;
 
+import java.text.DecimalFormat;
 import java.util.Arrays;
 import java.util.regex.Pattern;
 
@@ -11,6 +12,9 @@ public class Calculate {
         }
         String[] arr = splitString(input);
         for(int i = 0; i< arr.length; i++){
+            if (Integer.parseInt(arr[i]) < 0) {
+                throw new IllegalArgumentException("음수는 허용되지 않습니다.");
+            }
             sum = sum + Integer.parseInt(arr[i]);
         }
         return sum;
@@ -29,7 +33,7 @@ public class Calculate {
 
         else {
             String[] str = input.split("[,:]");
-            System.out.println("분리된 배열은 : " + Arrays.toString(str));
+//            System.out.println("분리된 배열은 : " + Arrays.toString(str));
             return str;
         }
     }

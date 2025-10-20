@@ -16,13 +16,14 @@ class ApplicationTest extends NsTest {
         });
     }
 
-//    @Test
-//    void 예외_테스트() {
-//        assertSimpleTest(() ->
-//            assertThatThrownBy(() -> runException("-1,2,3"))
-//                .isInstanceOf(IllegalArgumentException.class)
-//        );
-//    }
+    @Test
+    void 예외_테스트() {
+        assertSimpleTest(() ->
+            assertThatThrownBy(() -> runException("-1,2,3"))
+                .isInstanceOf(IllegalArgumentException.class)
+        );
+    }
+
     @Test
     void 빈문자열_또는_null_입력시_0_반환() {
         // given
@@ -68,8 +69,8 @@ class ApplicationTest extends NsTest {
         Calculate.add(input1);
         //then
         assertThat(Calculate.add(input1)).isEqualTo(26);
-
     }
+
     @Override
     public void runMain() {
         Application.main(new String[]{});
