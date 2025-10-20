@@ -5,11 +5,15 @@ import java.util.regex.Pattern;
 
 public class Calculate {
     public static int add(String input){
+        int sum = 0;
         if (input == null || input.isEmpty()) {
             return 0;
         }
         String[] arr = splitString(input);
-        return 1;
+        for(int i = 0; i< arr.length; i++){
+            sum = sum + Integer.parseInt(arr[i]);
+        }
+        return sum;
     }
 
     public static String[] splitString(String input){

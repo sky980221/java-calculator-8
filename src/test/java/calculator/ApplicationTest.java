@@ -59,6 +59,17 @@ class ApplicationTest extends NsTest {
         //then
         assertThat(Calculate.splitString(input1)).isEqualTo(new String[]{"6","2","4"});
     }
+
+    @Test
+    void 숫자_합산_기능(){
+        //given
+        String input1 = "//;\n8;12;6";
+        //when
+        Calculate.add(input1);
+        //then
+        assertThat(Calculate.add(input1)).isEqualTo(26);
+
+    }
     @Override
     public void runMain() {
         Application.main(new String[]{});
